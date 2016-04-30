@@ -172,3 +172,15 @@ img.sprite {
 .devolve {
   color: rgba(29, 114, 214, 1);
 }
+
+nav.navbar.navbar-default.navbar-static-bottom {
+    margin-bottom: 0;
+}
+
+.container {
+    padding-top: 10px;
+}
+
+.pokeLink {
+  color: lightblue;
+}

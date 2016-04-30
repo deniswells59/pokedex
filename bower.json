@@ -6,7 +6,7 @@
     "Denis Wells <deniswells59@gmail.com>"
   ],
   "license": "ISC",
-  "homepage": "https://github.com/deniswells59/grade-tracker-test",
+  "homepage": "https://github.com/deniswells59/pokedex",
   "ignore": [
     "**/.*",
     "node_modules",

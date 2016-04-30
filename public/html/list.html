@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row">
+
+
+    <h1 ng-show="pokeList.length > 1" class="text-center"><span class='list-title'>List</span></h1>
+    <h1 ng-show="pokeList.length < 1" class="text-center"><span class='list-title'>Loading...</span></h1>
+    <img class='pikachu' ng-show="pokeList.length < 1" src="http://vignette2.wikia.nocookie.net/steven-universe/images/5/5d/Shiny_Pikachu_Sprite.gif/revision/latest?cb=20141230031628">
+    <div ng-show="pokeList.length > 1" class="box" >
+        <button ng-disabled="prev === null" ng-click="getPokemon(prev)" class="btn left-arrow page">
+          <i class="mdi mdi-arrow-left-bold-circle"></i>
+        </button>
+        <span class='page-info'>Page</span>
+        <button ng-disabled="next === null" ng-click="getPokemon(next)" class="btn right-arrow page">
+          <i class="mdi mdi-arrow-right-bold-circle"></i>
+        </button>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>More</td>
+          </tr>
+        </thead>
+
+        <tbody ng-repeat="pokemon in pokeList">
+          <tr>
+            <td>{{pokemon.id}}</td>
+            <td>{{pokemon.name}}</td>
+            <td>
+              <button class="btn btn-danger btn-xs">
+                <i aria-hidden="true" class="mdi mdi-pokeball pokeball"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+  </div>
+</div>

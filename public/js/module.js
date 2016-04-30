@@ -10,5 +10,9 @@ app.config(function($stateProvider, $urlRouterProvider) {
     templateUrl: '/html/list.html',
     controller: 'listCtrl'
   })
-
+  .state('pokemon', {
+    url:'/pokemon/:id',
+    templateUrl: '/html/pokemon.html',
+    controller: 'pokeCtrl'
+  })
 })

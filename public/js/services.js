@@ -4,8 +4,8 @@ var app = angular.module('pokeApp');
 
 app.service('Poke', function($http) {
 
-  this.getPage = link => {
-    return $http.get(link);
+  this.getPage = num => {
+    return $http.get(`https://pokeapi.co/api/v2/pokemon/?limit=100&offset=${num}`);
   }
 
   this.getPokemon = url => {

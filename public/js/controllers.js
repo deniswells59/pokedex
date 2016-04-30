@@ -2,13 +2,14 @@
 
 var app = angular.module('pokeApp');
 
-app.controller('listCtrl', function($scope, $state, Poke) {
-  $scope.getPokemon = (link) => {
+app.controller('listCtrl', function($scope, $stateParams, Poke) {
+  $scope.getPokemon = (num) => {
     $scope.pokeList = [];
-    Poke.getPage(link)
+    Poke.getPage(num)
     .then(list => {
 
       $scope.next = list.data.next;
+      console.log($scope.next);
       $scope.prev = list.data.previous;
       var pokeList = list.data.results;
       pokeList.forEach(obj => {
@@ -27,7 +28,7 @@ app.controller('listCtrl', function($scope, $state, Poke) {
       console.error(err);
     })
   }
-  $scope.getPokemon("https://pokeapi.co/api/v2/pokemon/?limit=20&offset=0");
+  $scope.getPokemon(0);
 })
 
 

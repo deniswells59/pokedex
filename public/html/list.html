@@ -10,7 +10,7 @@
           <i class="mdi mdi-arrow-left-bold-circle"></i>
         </button>
         <span class='page-info'>Page</span>
-        <button ng-disabled="next === null" ng-click="getPokemon(next)" class="btn right-arrow page">
+        <button ng-disabled="next === null || next === 'https://pokeapi.co/api/v2/pokemon/?limit=100&offset=800'" ng-click="getPokemon(next)" class="btn right-arrow page">
           <i class="mdi mdi-arrow-right-bold-circle"></i>
         </button>
 
@@ -24,7 +24,7 @@
         </thead>
 
         <tbody ng-repeat="pokemon in pokeList">
-          <tr>
+          <tr ng-show="pokemon.id < 722">
             <td>{{pokemon.id}}</td>
             <td>{{pokemon.name}}</td>
             <td>

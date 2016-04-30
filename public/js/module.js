@@ -6,7 +6,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
   $stateProvider
   .state('list', {
-    url: '/',
+    url: '/:num',
     templateUrl: '/html/list.html',
     controller: 'listCtrl'
   })

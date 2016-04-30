@@ -6,7 +6,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
   $stateProvider
   .state('list', {
-    url: '/',
+    url: '/list',
     templateUrl: '/html/list.html',
     controller: 'listCtrl'
   })
@@ -15,4 +15,5 @@ app.config(function($stateProvider, $urlRouterProvider) {
     templateUrl: '/html/pokemon.html',
     controller: 'pokeCtrl'
   })
+  $urlRouterProvider.otherwise('/list');
 })

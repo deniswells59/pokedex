@@ -5,7 +5,7 @@ var app = angular.module('pokeApp');
 app.service('Poke', function($http) {
 
   this.getPage = num => {
-    return $http.get(`https://pokeapi.co/api/v2/pokemon/?limit=100&offset=${num}`);
+    return $http.get(`https://pokeapi.co/api/v2/pokemon/?limit=100&offset=${num}`, { cache: true});
   }
 
   this.getPokemon = url => {
@@ -13,10 +13,10 @@ app.service('Poke', function($http) {
   }
 
   this.getPokeById = id => {
-    return $http.get(`https://pokeapi.co/api/v2/pokemon/${id}/`);
+    return $http.get(`https://pokeapi.co/api/v2/pokemon/${id}/`, { cache: true});
   }
 
   this.getDesc = url => {
-    return $http.get(url);
+    return $http.get(url, { cache: true});
   }
 })

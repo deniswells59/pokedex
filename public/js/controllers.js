@@ -44,6 +44,7 @@ app.controller('pokeCtrl', function(Poke, $stateParams, $scope) {
       if(speciesInfo.data.evolves_from_species){
         $scope.poke.evolves = speciesInfo.data.evolves_from_species.name;
         $scope.poke.devolveId = speciesInfo.data.evolves_from_species.url.split('/')[6]
+        console.log();
       }
     })
     .catch(err => {

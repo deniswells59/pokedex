@@ -150,7 +150,8 @@ img.sprite {
 
 .infoTitle {
   font-size: 25px;
-  color: #af3230;
+  color: #c33e3b;
+  font-weight: bolder;
 }
 
 .descTitle {

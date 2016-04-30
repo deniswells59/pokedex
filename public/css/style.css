@@ -79,6 +79,7 @@ button.btn.btn-danger.btn-xs {
 
 .box {
     margin: auto;
+    margin-bottom: 30px;
     background-color: rgba(29, 65, 120, 0.48);
     min-height: 400px;
     max-width: 800px;
@@ -131,4 +132,43 @@ img.sprite {
   display: block;
   width: 200px;
   margin: auto;
+}
+
+.poke-name {
+  font-size: 64px;
+  margin-top: 2em;
+}
+
+.pokeInfo {
+  color: white;
+  font-size: 18px;
+}
+
+.pokeWeight, .pokeHeight {
+  display: inline;
+}
+
+.infoTitle {
+  font-size: 25px;
+  color: #af3230;
+}
+
+.descTitle {
+  font-size: 18px;
+}
+
+.pokeInfo.pokeDesc {
+    border: 4px solid #af3230;
+    max-width: 500px;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: white;
+    color: black;
+}
+
+
+.devolve {
+  color: rgba(29, 114, 214, 1);
 }

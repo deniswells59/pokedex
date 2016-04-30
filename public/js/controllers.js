@@ -36,7 +36,14 @@ app.controller('pokeCtrl', function(Poke, $stateParams, $scope) {
     Poke.getPokeById($stateParams.id)
     .then(res => {
       $scope.poke = res.data;
-      console.log($scope.poke);
+      return Poke.getDesc(res.data.species.url);
+    })
+    .then(speciesInfo => {
+      $scope.poke.desc = speciesInfo.data.flavor_text_entries[1];
+      if(speciesInfo.data.evolves_from_species){
+        $scope.poke.evolves = speciesInfo.data.evolves_from_species.name;
+        $scope.poke.devolveId = speciesInfo.data.evolves_from_species.url.split('/')[6]
+      }
     })
     .catch(err => {
       console.error(err);

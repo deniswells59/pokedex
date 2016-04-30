@@ -4,7 +4,7 @@
 
 
     <h1 ng-if='poke === null' class="text-center">Loading</h1>
-    <h1 ng-if='poke' class="text-center">{{poke.name | capitalize}}</h1>
+    <h1 ng-if='poke' class="text-center poke-name">{{poke.name | capitalize}}</h1>
     <img class='pikachu' ng-show="poke === null" src="http://vignette2.wikia.nocookie.net/steven-universe/images/5/5d/Shiny_Pikachu_Sprite.gif/revision/latest?cb=20141230031628">
 
     <div ng-if='poke'>
@@ -15,10 +15,26 @@
         <button ui-sref='pokemon({id: searchNumber})' class="btn go">GO</button>
       </form>
     </div>
-    <div class=box>
-      <img class='sprite' src="{{poke.sprites.front_default}}">
+    <div ng-if='poke' class=box>
+      <img ng-if='poke' class='sprite' ng-src='{{poke.sprites.front_default}}'>
+      <div class='pokeInfo pokeId text-center'><span class="infoTitle">ID:</span> {{poke.id}}</div>
+      <div class='col-xs-6 col-xs-offset-2 pokeInfo pokeWeight'><span class="infoTitle">Weight:</span> {{poke.weight}} lbs</div>
+      <div class="col-xs-6 col-xs-offset-2 pokeInfo pokeHeight"><span class="infoTitle">Height:</span> {{poke.height}} inches</div>
+      <div class="pokeInfo"><span class="infoTitle">Types:</span>
+        <div class='pokeInfo pokeType' ng-repeat="type in poke.types">{{type.type.name | capitalize}}</div>
+      </div>
+
+      <div ng-if='poke.evolves' class='pokeInfo pokeDesc'><span class="descTitle">Evolves From:</span>
+        <a class="pokeInfo devolve" ui-sref="pokemon({id: poke.devolveId})">{{poke.evolves | capitalize}}</a>
+      </div>
+
+    <div class="small-box">
+      <div ng-show="!poke.desc.flavor_text"class='pokeInfo pokeDesc'><span class="descTitle">Desc: </span> Loading...</div>
+      <div ng-show="poke.desc.flavor_text"class='pokeInfo pokeDesc'><span class="descTitle">Desc:</span> {{poke.desc.flavor_text}}</div>
+    </div>
 
     </div>
+
 
 
   </div>

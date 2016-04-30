@@ -13,6 +13,10 @@ app.service('Poke', function($http) {
   }
 
   this.getPokeById = id => {
-    return $http.get(`https://pokeapi.co/api/v2/pokemon/${id}/`)
+    return $http.get(`https://pokeapi.co/api/v2/pokemon/${id}/`);
+  }
+
+  this.getDesc = url => {
+    return $http.get(url);
   }
 })
